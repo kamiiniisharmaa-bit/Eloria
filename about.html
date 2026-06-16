@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eloria · About Us</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background: #faf9f6;
+      color: #1e1e2a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- navbar (consistent) ---------- */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #2b2b4a, #6c4b9b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+    .logo i {
+      -webkit-text-fill-color: #6c4b9b;
+      margin-right: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-weight: 500;
+      color: #2d2d44;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #6c4b9b;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 20px;
+      font-size: 1.2rem;
+      color: #2d2d44;
+    }
+    .nav-icons i {
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .nav-icons i:hover {
+      color: #6c4b9b;
+      transform: scale(1.05);
+    }
+
+    /* ---------- about header ---------- */
+    .about-header {
+      padding: 40px 0 16px;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      margin-bottom: 32px;
+    }
+    .about-header h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .about-header h1 i {
+      color: #6c4b9b;
+    }
+    .about-header p {
+      color: #4b4b64;
+      margin-top: 8px;
+      font-size: 1.1rem;
+      max-width: 720px;
+    }
+
+    /* ---------- about content ---------- */
+    .about-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin: 28px 0 60px;
+    }
+
+    .about-card {
+      background: white;
+      padding: 32px 36px 36px;
+      border-radius: 32px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.02);
+      border: 1px solid rgba(0,0,0,0.02);
+      transition: 0.2s;
+    }
+    .about-card:hover {
+      border-color: #e9e3f5;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.04);
+    }
+
+    .about-card h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: #1d1d2e;
+    }
+    .about-card h2 i {
+      color: #6c4b9b;
+      font-size: 1.5rem;
+      width: 2.2rem;
+    }
+
+    .about-card p {
+      margin-bottom: 14px;
+      color: #2e2e48;
+      font-size: 1.05rem;
+    }
+
+    .about-card ul {
+      margin-left: 28px;
+      margin-bottom: 14px;
+      color: #2e2e48;
+    }
+    .about-card ul li {
+      margin-bottom: 8px;
+    }
+
+    .about-card .highlight-tag {
+      background: #f5f2fc;
+      padding: 2px 14px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: #4f3590;
+      display: inline-block;
+    }
+
+    /* ---------- mission/vision highlight ---------- */
+    .mission-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 8px;
+    }
+    .mission-item {
+      flex: 1 1 200px;
+      background: #f7f5fc;
+      padding: 24px 22px;
+      border-radius: 24px;
+      text-align: center;
+    }
+    .mission-item i {
+      font-size: 2.2rem;
+      color: #6c4b9b;
+      margin-bottom: 10px;
+    }
+    .mission-item h4 {
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #1b1b30;
+    }
+    .mission-item p {
+      font-size: 0.95rem;
+      color: #4b4b64;
+      margin-top: 6px;
+    }
+
+    /* ---------- team / values ---------- */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      margin: 8px 0 4px;
+    }
+    .value-chip {
+      background: #faf9f6;
+      padding: 18px 16px;
+      border-radius: 24px;
+      border: 1px solid #edeaf5;
+      text-align: center;
+      transition: 0.2s;
+    }
+    .value-chip i {
+      font-size: 1.8rem;
+      color: #6c4b9b;
+      margin-bottom: 8px;
+    }
+    .value-chip h4 {
+      font-weight: 600;
+      color: #1d1d2e;
+    }
+    .value-chip p {
+      font-size: 0.9rem;
+      color: #4b4b64;
+      margin-top: 4px;
+    }
+
+    /* ---------- footer (reused) ---------- */
+    footer {
+      margin-top: 20px;
+      border-top: 1px solid rgba(0,0,0,0.04);
+      padding: 36px 0 28px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      color: #3a3a52;
+    }
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 140px;
+    }
+    .footer-col h4 {
+      font-weight: 600;
+      color: #1e1e2a;
+      margin-bottom: 6px;
+    }
+    .footer-col a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 0.95rem;
+    }
+    .footer-col a:hover {
+      color: #6c4b9b;
+    }
+    .footer-social i {
+      font-size: 1.3rem;
+      margin-right: 18px;
+      color: #3a3a52;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .footer-social i:hover {
+      color: #6c4b9b;
+      transform: scale(1.1);
+    }
+    .copy {
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.7;
+      padding-top: 22px;
+      border-top: 1px solid rgba(0,0,0,0.03);
+      margin-top: 10px;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+      .nav-icons {
+        justify-content: center;
+      }
+      .about-header h1 {
+        font-size: 2rem;
+      }
+      .about-card {
+        padding: 24px 20px;
+      }
+      .mission-row {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header (same as all pages) -->
+  <header class="navbar">
+    <a href="#" class="logo"><i class="fas fa-gem"></i> Eloria</a>
+    <div class="nav-links">
+     <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-icons">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
+  </header>
+
+  <!-- about page header -->
+  <div class="about-header">
+    <h1><i class="fas fa-leaf"></i> About Eloria</h1>
+    <p>We believe in timeless design, responsible craftsmanship, and a touch of everyday poetry. Eloria was born from a love for beautiful, sustainable objects that tell a story.</p>
+  </div>
+
+  <!-- about content -->
+  <div class="about-grid">
+
+    <!-- Our story -->
+    <div class="about-card">
+      <h2><i class="fas fa-book-open"></i> Our Story</h2>
+      <p>Founded in 2020, <strong>Eloria</strong> began as a small atelier with a simple vision: to create pieces that transcend seasons and trends. Our name is inspired by the word “<em>elegance</em>” and the idea of a radiant, timeless aura — <strong>Eloria</strong> is the light you carry with you.</p>
+      <p>From our studio in New York, we collaborate with artisans around the world to bring you curated collections that balance modern minimalism with heritage techniques. Every piece is thoughtfully designed to be cherished for years, not just for a season.</p>
+      <p><span class="highlight-tag"><i class="fas fa-tag"></i> Since 2020</span> &nbsp; <span class="highlight-tag"><i class="fas fa-globe"></i> Global artisans</span></p>
+    </div>
+
+    <!-- Mission & vision -->
+    <div class="about-card">
+      <h2><i class="fas fa-bullseye"></i> Mission &amp; Vision</h2>
+      <p>Our mission is to redefine modern elegance — offering products that are as kind to the planet as they are beautiful. We are committed to:</p>
+      <div class="mission-row">
+        <div class="mission-item">
+          <i class="fas fa-recycle"></i>
+          <h4>Sustainability</h4>
+          <p>Eco‑conscious materials and responsible production.</p>
+        </div>
+        <div class="mission-item">
+          <i class="fas fa-hand-holding-heart"></i>
+          <h4>Fair Craft</h4>
+          <p>Supporting artisan communities with fair wages and safe conditions.</p>
+        </div>
+        <div class="mission-item">
+          <i class="fas fa-infinity"></i>
+          <h4>Timeless Design</h4>
+          <p>Pieces that outlast trends and become your everyday favorites.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Our values -->
+    <div class="about-card">
+      <h2><i class="fas fa-heart"></i> Our Values</h2>
+      <p>These principles guide everything we do — from design to delivery:</p>
+      <div class="values-grid">
+        <div class="value-chip">
+          <i class="fas fa-feather-alt"></i>
+          <h4>Authenticity</h4>
+          <p>Honest materials, honest stories.</p>
+        </div>
+        <div class="value-chip">
+          <i class="fas fa-users"></i>
+          <h4>Community</h4>
+          <p>We grow together with our customers and makers.</p>
+        </div>
+        <div class="value-chip">
+          <i class="fas fa-tree"></i>
+          <h4>Nature</h4>
+          <p>Inspired by the natural world, we protect it.</p>
+        </div>
+        <div class="value-chip">
+          <i class="fas fa-gem"></i>
+          <h4>Quality</h4>
+          <p>Meticulous attention to every detail.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team / craftsmanship -->
+    <div class="about-card">
+      <h2><i class="fas fa-hands"></i> Craftsmanship &amp; Team</h2>
+      <p>Behind every Eloria piece is a network of skilled artisans, designers, and dreamers. Our core team is based in New York, but our heart spans across Portugal, Japan, and Mexico — where we work with small-batch producers who share our dedication to quality.</p>
+      <ul>
+        <li><strong>Design:</strong> In‑house studio in Brooklyn, NY.</li>
+        <li><strong>Materials:</strong> Sourced from certified sustainable suppliers.</li>
+        <li><strong>Production:</strong> Small‑batch manufacturing to reduce waste.</li>
+        <li><strong>Packaging:</strong> 100% recyclable and plastic‑free.</li>
+      </ul>
+      <p><span class="highlight-tag"><i class="fas fa-map-pin"></i> Brooklyn, NY</span> &nbsp; <span class="highlight-tag"><i class="fas fa-globe-americas"></i> Global partners</span></p>
+    </div>
+
+    <!-- Sustainability commitment -->
+    <div class="about-card">
+      <h2><i class="fas fa-seedling"></i> Our Sustainability Pledge</h2>
+      <p>We believe that luxury and responsibility can coexist. That’s why we are constantly working to reduce our environmental footprint:</p>
+      <ul>
+        <li><strong>Carbon‑neutral shipping</strong> — we offset all deliveries.</li>
+        <li><strong>Eco‑friendly materials</strong> — organic cotton, recycled metals, and biodegradable fibers.</li>
+        <li><strong>Zero‑waste packaging</strong> — every box is designed to be reused or composted.</li>
+        <li><strong>Tree planting</strong> — for every order, we plant a tree with our reforestation partners.</li>
+      </ul>
+      <p>We are proud to be a <strong>Climate Neutral Certified</strong> brand, and we’re always looking for new ways to do better.</p>
+    </div>
+
+    <!-- Join us -->
+    <div class="about-card" style="background: #f7f5fc; border-color: #dcd4ed;">
+      <h2><i class="fas fa-handshake"></i> Join the Eloria Community</h2>
+      <p>We’re more than just a store — we’re a community of thoughtful individuals who appreciate the beauty of well‑made things. Follow our journey, share your stories, and be part of a movement that values quality, transparency, and joy.</p>
+      <p style="margin-top: 12px;">
+        <span class="highlight-tag"><i class="fab fa-instagram"></i> @eloria</span> &nbsp;
+        <span class="highlight-tag"><i class="fab fa-pinterest"></i> eloria</span> &nbsp;
+        <span class="highlight-tag"><i class="fas fa-envelope"></i> hello@eloria.com</span>
+      </p>
+    </div>
+
+  </div> <!-- about-grid -->
+
+  <!-- footer (reused) -->
+  <footer>
+    <div class="footer-col">
+      <h4><i class="fas fa-gem" style="color:#6c4b9b;"></i> Eloria</h4>
+      <p style="max-width: 220px; opacity:0.7;">Timeless elegance for every moment.</p>
+      <div class="footer-social">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-pinterest"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="#">New arrivals</a>
+      <a href="#">Bestsellers</a>
+      <a href="#">Gift sets</a>
+      <a href="#">Sale</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="#">FAQ</a>
+      <a href="#">Shipping</a>
+      <a href="#">Returns</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="#">Our story</a>
+      <a href="#">Sustainability</a>
+      <a href="#">Careers</a>
+      <a href="#">Press</a>
+    </div>
+    <div class="copy">
+      &copy; 2026 Eloria — crafted with <i class="fas fa-heart" style="color:#b392d6;"></i>
+    </div>
+  </footer>
+</div> <!-- container -->
+</body>
+</html>

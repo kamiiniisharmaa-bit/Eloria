@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eloria · Privacy Policy</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background: #faf9f6;
+      color: #1e1e2a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- navbar (same as homepage) ---------- */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #2b2b4a, #6c4b9b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+    .logo i {
+      -webkit-text-fill-color: #6c4b9b;
+      margin-right: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-weight: 500;
+      color: #2d2d44;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #6c4b9b;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 20px;
+      font-size: 1.2rem;
+      color: #2d2d44;
+    }
+    .nav-icons i {
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .nav-icons i:hover {
+      color: #6c4b9b;
+      transform: scale(1.05);
+    }
+
+    /* ---------- privacy header ---------- */
+    .privacy-header {
+      padding: 40px 0 16px;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      margin-bottom: 32px;
+    }
+    .privacy-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .privacy-header h1 i {
+      color: #6c4b9b;
+    }
+    .privacy-header p {
+      color: #4b4b64;
+      margin-top: 8px;
+      font-size: 1.05rem;
+    }
+
+    .badge-date {
+      background: #eae5f5;
+      padding: 4px 16px;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #3a2a5e;
+      display: inline-block;
+    }
+
+    /* ---------- privacy content ---------- */
+    .privacy-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      margin: 28px 0 60px;
+    }
+
+    .privacy-block {
+      background: white;
+      padding: 28px 32px 32px;
+      border-radius: 32px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.02);
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+    .privacy-block h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: #1d1d2e;
+    }
+    .privacy-block h2 i {
+      color: #6c4b9b;
+      font-size: 1.4rem;
+      width: 2rem;
+    }
+    .privacy-block p {
+      margin-bottom: 14px;
+      color: #2e2e48;
+    }
+    .privacy-block ul {
+      margin-left: 28px;
+      margin-bottom: 14px;
+      color: #2e2e48;
+    }
+    .privacy-block ul li {
+      margin-bottom: 6px;
+    }
+    .privacy-block strong {
+      color: #1b1b30;
+    }
+    .highlight-badge {
+      background: #f5f2fc;
+      padding: 2px 12px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: #4f3590;
+      display: inline-block;
+    }
+
+    /* ---------- footer (reused) ---------- */
+    footer {
+      margin-top: 20px;
+      border-top: 1px solid rgba(0,0,0,0.04);
+      padding: 36px 0 28px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      color: #3a3a52;
+    }
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 140px;
+    }
+    .footer-col h4 {
+      font-weight: 600;
+      color: #1e1e2a;
+      margin-bottom: 6px;
+    }
+    .footer-col a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 0.95rem;
+    }
+    .footer-col a:hover {
+      color: #6c4b9b;
+    }
+    .footer-social i {
+      font-size: 1.3rem;
+      margin-right: 18px;
+      color: #3a3a52;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .footer-social i:hover {
+      color: #6c4b9b;
+      transform: scale(1.1);
+    }
+    .copy {
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.7;
+      padding-top: 22px;
+      border-top: 1px solid rgba(0,0,0,0.03);
+      margin-top: 10px;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+      .nav-icons {
+        justify-content: center;
+      }
+      .privacy-header h1 {
+        font-size: 2rem;
+      }
+      .privacy-block {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header (same as homepage) -->
+  <header class="navbar">
+    <a href="#" class="logo"><i class="fas fa-gem"></i> Eloria</a>
+    <div class="nav-links">
+     <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-icons">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
+  </header>
+
+  <!-- privacy page header -->
+  <div class="privacy-header">
+    <h1><i class="fas fa-shield-alt"></i> Privacy Policy</h1>
+    <p><span class="badge-date"><i class="far fa-calendar-alt"></i> Last updated: June 17, 2026</span> &nbsp;—&nbsp; Your privacy matters to us at Eloria.</p>
+  </div>
+
+  <!-- privacy content -->
+  <div class="privacy-grid">
+
+    <!-- 1. Overview -->
+    <div class="privacy-block">
+      <h2><i class="fas fa-eye"></i> 1. Overview</h2>
+      <p>At <strong>Eloria</strong> (“we”, “our”, “us”), we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or make a purchase.</p>
+      <p>By using our services, you consent to the data practices described in this policy. If you do not agree, please do not use our website.</p>
+    </div>
+
+    <!-- 2. Information we collect -->
+    <div class="privacy-block">
+      <h2><i class="fas fa-database"></i> 2. Information We Collect</h2>
+      <p>We collect information to provide better services to all our customers. The types of information we collect include:</p>
+      <ul>
+        <li><strong>Personal Information:</strong> Name, email address, phone number, shipping/billing address, and payment details when you make a purchase or create an account.</li>
+        <li><strong>Usage Data:</strong> Information about how you interact with our website, such as IP address, browser type, pages visited, time spent, and referring URLs.</li>
+        <li><strong>Cookies & Tracking:</strong> We use cookies and similar technologies to enhance your experience, analyze trends, and personalize content.</li>
+      </ul>
+      <p><span class="highlight-badge"><i class="fas fa-cookie-bite"></i> Cookie preferences</span> You can manage your cookie settings in your browser at any time.</p>
+    </div>
+
+    <!-- 3. How we use your information -->
+    <div class="privacy-block">
+      <h2><i class="fas fa-cogs"></i> 3. How We Use Your Information</h2>
+      <p>We use the information we collect for the following purposes:</p>
+      <ul>
+        <li>To process and fulfill your orders, including shipping and customer support.</li>
+        <li>To communicate with you about your orders, updates, and promotional offers (you may opt out at any time).</li>
+        <li>To improve our website, products, and services based on user behavior and feedback.</li>
+        <li>To prevent fraudulent transactions and enhance security.</li>
+        <li>To comply with legal obligations and enforce our Terms of Service.</li>
+      </ul>
+    </div>
+
+    <!-- 4. Sharing your information -->
+    <div class="privacy-block">
+      <h2><i class="fas fa-share-alt"></i> 4. Sharing Your Information</h2>
+      <p>We do not sell or rent your personal information to third parties. However, we may share your data with trusted partners who assist us in operating our website, processing payments, and delivering orders (e.g., payment gateways, shipping carriers). These partners are bound by confidentiality agreements and may only use your data for the specific purposes we authorize.</p>
+      <p>We may also disclose your information if required by law or to protect the rights, property, or safety of Eloria, our customers, or others.</p>
+    </div>
+
+    <!-- 5. Data security -->
+    <div class="privacy-block">
+      <h2><i class="fas fa-lock"></i> 5. Data Security</h2>
+      <p>We implement a variety of security measures to maintain the safety of your personal information. All sensitive payment information is encrypted via Secure Socket Layer (SSL) technology and stored in a secure environment.</p>
+      <p>However, no method of transmission over the internet or electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your data, we cannot guarantee absolute security.</p>
+    </div>
+
+    <!-- 6. Your rights & choices -->
+    <div class="privacy-block">
+      <h2><i class="fas fa-user-check"></i> 6. Your Rights & Choices</h2>
+      <p>You have certain rights regarding your personal information. Depending on your location, these may include:</p>
+      <ul>
+        <li><strong>Access:</strong> Request a copy of the personal data we hold about you.</li>
+        <li><strong>Correction:</strong> Update or correct inaccurate information.</li>
+        <li><strong>Deletion:</strong> Request that we delete your personal data, subject to legal obligations.</li>
+        <li><strong>Opt-out:</strong> Unsubscribe from marketing communications at any time via the link in our emails or by contacting us.</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us at <a href="#" style="color:#6c4b9b; text-decoration: none; border-bottom: 1px dotted #6c4b9b;">privacy@eloria.com</a>.</p>
+    </div>
+
+    <!-- 7. Children's privacy -->
+    <div class="privacy-block">
+      <h2><i class="fas fa-child"></i> 7. Children's Privacy</h2>
+      <p>Our website is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us immediately so we can take appropriate action.</p>
+    </div>
+
+    <!-- 8. Third-party links -->
+    <div class="privacy-block">
+      <h2><i class="fas fa-external-link-alt"></i> 8. Third-Party Links</h2>
+      <p>Our website may contain links to third-party websites or services that are not operated by us. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites. We encourage you to review the privacy policies of any external sites you visit.</p>
+    </div>
+
+    <!-- 9. Changes to this policy -->
+    <div class="privacy-block">
+      <h2><i class="fas fa-history"></i> 9. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. We will notify you of any material changes by posting the updated policy on this page and updating the “Last updated” date.</p>
+      <p>We encourage you to review this page periodically for the latest information on our privacy practices.</p>
+    </div>
+
+    <!-- 10. Contact us -->
+    <div class="privacy-block">
+      <h2><i class="fas fa-envelope"></i> 10. Contact Us</h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please reach out to us:</p>
+      <ul>
+        <li><i class="fas fa-envelope" style="color:#6c4b9b; width: 1.6rem;"></i> privacy@eloria.com</li>
+        <li><i class="fas fa-phone-alt" style="color:#6c4b9b; width: 1.6rem;"></i> +1 (888) 555-ELORIA</li>
+        <li><i class="fas fa-map-pin" style="color:#6c4b9b; width: 1.6rem;"></i> 1120 Fifth Avenue, New York, NY 10028</li>
+      </ul>
+      <p style="margin-top: 16px;">We aim to respond within 24 hours during business days.</p>
+    </div>
+
+  </div> <!-- privacy-grid -->
+
+  <!-- footer (reused) -->
+  <footer>
+    <div class="footer-col">
+      <h4><i class="fas fa-gem" style="color:#6c4b9b;"></i> Eloria</h4>
+      <p style="max-width: 220px; opacity:0.7;">Timeless elegance for every moment.</p>
+      <div class="footer-social">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-pinterest"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="#">New arrivals</a>
+      <a href="#">Bestsellers</a>
+      <a href="#">Gift sets</a>
+      <a href="#">Sale</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="#">FAQ</a>
+      <a href="#">Shipping</a>
+      <a href="#">Returns</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="#">Our story</a>
+      <a href="#">Sustainability</a>
+      <a href="#">Careers</a>
+      <a href="#">Press</a>
+    </div>
+    <div class="copy">
+      &copy; 2026 Eloria — crafted with <i class="fas fa-heart" style="color:#b392d6;"></i>
+    </div>
+  </footer>
+</div> <!-- container -->
+</body>
+</html>

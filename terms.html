@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eloria · Terms of Service</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background: #faf9f6;
+      color: #1e1e2a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- navbar (same as homepage) ---------- */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #2b2b4a, #6c4b9b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+    }
+    .logo i {
+      -webkit-text-fill-color: #6c4b9b;
+      margin-right: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      font-weight: 500;
+      color: #2d2d44;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #6c4b9b;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 20px;
+      font-size: 1.2rem;
+      color: #2d2d44;
+    }
+    .nav-icons i {
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .nav-icons i:hover {
+      color: #6c4b9b;
+      transform: scale(1.05);
+    }
+
+    /* ---------- terms hero (simple) ---------- */
+    .terms-header {
+      padding: 40px 0 16px;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      margin-bottom: 32px;
+    }
+    .terms-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .terms-header h1 i {
+      color: #6c4b9b;
+    }
+    .terms-header p {
+      color: #4b4b64;
+      margin-top: 8px;
+      font-size: 1.05rem;
+    }
+
+    /* ---------- terms content ---------- */
+    .terms-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      margin: 28px 0 60px;
+    }
+
+    .term-block {
+      background: white;
+      padding: 28px 32px 32px;
+      border-radius: 32px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.02);
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+    .term-block h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: #1d1d2e;
+    }
+    .term-block h2 i {
+      color: #6c4b9b;
+      font-size: 1.4rem;
+      width: 2rem;
+    }
+    .term-block p {
+      margin-bottom: 14px;
+      color: #2e2e48;
+    }
+    .term-block ul {
+      margin-left: 28px;
+      margin-bottom: 14px;
+      color: #2e2e48;
+    }
+    .term-block ul li {
+      margin-bottom: 6px;
+    }
+    .term-block strong {
+      color: #1b1b30;
+    }
+    .term-block .highlight {
+      background: #f5f2fc;
+      padding: 2px 10px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #4f3590;
+    }
+
+    .badge-date {
+      background: #eae5f5;
+      padding: 4px 16px;
+      border-radius: 60px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #3a2a5e;
+      display: inline-block;
+    }
+
+    /* ---------- footer (reused) ---------- */
+    footer {
+      margin-top: 20px;
+      border-top: 1px solid rgba(0,0,0,0.04);
+      padding: 36px 0 28px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+      color: #3a3a52;
+    }
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 140px;
+    }
+    .footer-col h4 {
+      font-weight: 600;
+      color: #1e1e2a;
+      margin-bottom: 6px;
+    }
+    .footer-col a {
+      text-decoration: none;
+      color: inherit;
+      font-size: 0.95rem;
+    }
+    .footer-col a:hover {
+      color: #6c4b9b;
+    }
+    .footer-social i {
+      font-size: 1.3rem;
+      margin-right: 18px;
+      color: #3a3a52;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .footer-social i:hover {
+      color: #6c4b9b;
+      transform: scale(1.1);
+    }
+    .copy {
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.7;
+      padding-top: 22px;
+      border-top: 1px solid rgba(0,0,0,0.03);
+      margin-top: 10px;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+      .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+      .nav-icons {
+        justify-content: center;
+      }
+      .terms-header h1 {
+        font-size: 2rem;
+      }
+      .term-block {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header (same as homepage) -->
+  <header class="navbar">
+    <a href="#" class="logo"><i class="fas fa-gem"></i> Eloria</a>
+    <div class="nav-links">
+     <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-icons">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-shopping-bag"></i>
+    </div>
+  </header>
+
+  <!-- terms page header -->
+  <div class="terms-header">
+    <h1><i class="fas fa-file-contract"></i> Terms of Service</h1>
+    <p><span class="badge-date"><i class="far fa-calendar-alt"></i> Last updated: June 17, 2026</span> &nbsp;—&nbsp; Please read these terms carefully before using Eloria.</p>
+  </div>
+
+  <!-- terms content -->
+  <div class="terms-grid">
+
+    <!-- 1. Introduction -->
+    <div class="term-block">
+      <h2><i class="fas fa-info-circle"></i> 1. Introduction</h2>
+      <p>Welcome to <strong>Eloria</strong> (“we”, “our”, “us”). These Terms of Service (“Terms”) govern your use of our website, products, and services. By accessing or using Eloria, you agree to be bound by these Terms. If you do not agree, please do not use our services.</p>
+      <p>We reserve the right to update or modify these Terms at any time without prior notice. Your continued use of the site constitutes acceptance of the updated Terms.</p>
+    </div>
+
+    <!-- 2. Account & registration -->
+    <div class="term-block">
+      <h2><i class="fas fa-user-circle"></i> 2. Account & Registration</h2>
+      <p>To access certain features, you may be required to create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
+      <ul>
+        <li>You must provide accurate and complete information.</li>
+        <li>You are at least 18 years old or have parental consent.</li>
+        <li>We reserve the right to suspend or terminate accounts that violate these Terms.</li>
+      </ul>
+      <p><span class="highlight"><i class="fas fa-shield-alt"></i> Privacy</span> Your personal data is handled in accordance with our <a href="#" style="color:#6c4b9b; text-decoration: none; border-bottom: 1px dotted #6c4b9b;">Privacy Policy</a>.</p>
+    </div>
+
+    <!-- 3. Orders & payments -->
+    <div class="term-block">
+      <h2><i class="fas fa-credit-card"></i> 3. Orders & Payments</h2>
+      <p>All orders placed through Eloria are subject to product availability and confirmation of the order price. We reserve the right to refuse or cancel any order for reasons including but not limited to: product unavailability, errors in pricing, or suspicion of fraud.</p>
+      <ul>
+        <li><strong>Pricing:</strong> Prices are listed in USD and may change without notice.</li>
+        <li><strong>Payment:</strong> We accept major credit cards and other secure payment methods.</li>
+        <li><strong>Shipping:</strong> Estimated delivery times are provided, but we are not liable for delays caused by carriers.</li>
+      </ul>
+    </div>
+
+    <!-- 4. Returns & refunds -->
+    <div class="term-block">
+      <h2><i class="fas fa-undo-alt"></i> 4. Returns & Refunds</h2>
+      <p>We want you to love your Eloria purchase. If you are not completely satisfied, you may return most items within 30 days of delivery for a full refund or exchange.</p>
+      <ul>
+        <li>Items must be unused, in original packaging, and with all tags attached.</li>
+        <li>Return shipping costs are the responsibility of the customer unless the item is defective.</li>
+        <li>Refunds are processed within 5–7 business days after we receive the return.</li>
+      </ul>
+      <p>For more details, see our full <a href="#" style="color:#6c4b9b; text-decoration: none; border-bottom: 1px dotted #6c4b9b;">Return Policy</a>.</p>
+    </div>
+
+    <!-- 5. Intellectual property -->
+    <div class="term-block">
+      <h2><i class="fas fa-copyright"></i> 5. Intellectual Property</h2>
+      <p>All content on the Eloria website — including text, graphics, logos, images, and software — is the property of Eloria or its content suppliers and is protected by copyright, trademark, and other intellectual property laws.</p>
+      <ul>
+        <li>You may not reproduce, distribute, or create derivative works without our explicit written permission.</li>
+        <li>Eloria™ and the Eloria logo are registered trademarks.</li>
+      </ul>
+    </div>
+
+    <!-- 6. Prohibited activities -->
+    <div class="term-block">
+      <h2><i class="fas fa-ban"></i> 6. Prohibited Activities</h2>
+      <p>You agree not to engage in any of the following prohibited activities:</p>
+      <ul>
+        <li>Violating any applicable law or regulation.</li>
+        <li>Interfering with the security or integrity of our website.</li>
+        <li>Transmitting viruses, malware, or any harmful code.</li>
+        <li>Attempting to gain unauthorized access to our systems.</li>
+        <li>Using our site for any fraudulent or deceptive purpose.</li>
+      </ul>
+    </div>
+
+    <!-- 7. Limitation of liability -->
+    <div class="term-block">
+      <h2><i class="fas fa-gavel"></i> 7. Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, Eloria and its affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or goodwill, arising out of or relating to your use of our services.</p>
+      <p>Our total liability to you for any claim arising out of these Terms shall not exceed the amount you paid to us during the twelve (12) months prior to the event giving rise to the liability.</p>
+    </div>
+
+    <!-- 8. Governing law -->
+    <div class="term-block">
+      <h2><i class="fas fa-scale-balanced"></i> 8. Governing Law</h2>
+      <p>These Terms shall be governed by and construed in accordance with the laws of the State of New York, without regard to its conflict of law provisions. Any legal action or proceeding arising out of these Terms shall be brought exclusively in the federal or state courts located in New York County, New York.</p>
+    </div>
+
+    <!-- 9. Contact information -->
+    <div class="term-block">
+      <h2><i class="fas fa-envelope"></i> 9. Contact Us</h2>
+      <p>If you have any questions, concerns, or feedback regarding these Terms, please reach out to us:</p>
+      <ul>
+        <li><i class="fas fa-envelope" style="color:#6c4b9b; width: 1.6rem;"></i> support@eloria.com</li>
+        <li><i class="fas fa-phone-alt" style="color:#6c4b9b; width: 1.6rem;"></i> +1 (888) 555-ELORIA</li>
+        <li><i class="fas fa-map-pin" style="color:#6c4b9b; width: 1.6rem;"></i> 1120 Fifth Avenue, New York, NY 10028</li>
+      </ul>
+      <p style="margin-top: 16px;">We aim to respond within 24 hours during business days.</p>
+    </div>
+
+  </div> <!-- terms-grid -->
+
+  <!-- footer (reused) -->
+  <footer>
+    <div class="footer-col">
+      <h4><i class="fas fa-gem" style="color:#6c4b9b;"></i> Eloria</h4>
+      <p style="max-width: 220px; opacity:0.7;">Timeless elegance for every moment.</p>
+      <div class="footer-social">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-pinterest"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="#">New arrivals</a>
+      <a href="#">Bestsellers</a>
+      <a href="#">Gift sets</a>
+      <a href="#">Sale</a>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="#">FAQ</a>
+      <a href="#">Shipping</a>
+      <a href="#">Returns</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <a href="#">Our story</a>
+      <a href="#">Sustainability</a>
+      <a href="#">Careers</a>
+      <a href="#">Press</a>
+    </div>
+    <div class="copy">
+      &copy; 2026 Eloria — crafted with <i class="fas fa-heart" style="color:#b392d6;"></i>
+    </div>
+  </footer>
+</div> <!-- container -->
+</body>
+</html>
